@@ -54,10 +54,10 @@ section {
         align-items: center;
     }
     .container-heading {
-        font-size: 32px;
+        font-size: 34px;
     }
     .container-description {
-        font-size: 14px;
+        font-size: 16px;
     }
     .container-gif {
         max-width: 360px;
@@ -65,6 +65,12 @@ section {
     }
  }
  @media all and (max-width: 420px) {
+    .container-heading {
+        font-size: 32px;
+    }
+    .container-description {
+        font-size: 14px;
+    }
     .container-gif {
         max-width: 260px;
         max-height: 260px;
