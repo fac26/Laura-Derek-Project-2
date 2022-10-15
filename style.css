@@ -1,0 +1,17 @@
+:root {
+   --bg-colour: #0C141C; /* Background colour - Dark blue */
+   --fg-colour-one: #272660; /* Accent 1 - Medium blue */
+   --fg-colour-two: #0FFFFF; /* Accent 2 - Neon blue */
+   --fg-colour-three: #ED1E79; /* Accent 3 - Bright pink */
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'IBM Plex Mono', monospace;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-colour);
+}
