@@ -24,7 +24,7 @@ body {
 }
   /*header CSS styles end*/
 header{
-    width: 750px;
+    width: 850px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 60px;
@@ -105,7 +105,7 @@ section {
     position: relative;
 }
 .container {
-    max-width: 1000px;
+    max-width: 850px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -134,17 +134,17 @@ section {
     max-width: 400px;
     max-height: 400px;
  }
+ @media all and (max-width: 850px) {
+    header{
+       max-width: 100%;
+       padding-right: 20px;
+       padding-left: 20px;
+     }
+   h1{
+       font-size:40px;
+   }
+}
  @media all and (max-width: 768px) {
-     header{
-        width: 500px;
-      }
-    h1{
-        font-size:40px;
-    }
-    .search-container {
-        flex-direction: column;
-        justify-content: center;
-    }
     .container {
         flex-direction: column;
         align-items: center;
@@ -162,12 +162,28 @@ section {
  }
  @media all and (max-width: 420px) {
     header{
-        width: 160px;
-        padding-top: 20px;
-        margin-bottom: 20px;
+        width: 100%;
       }
     h1{
-        font-size:20px;
+        font-size:1.2em;
+        letter-spacing: 0.7em;
+        margin: 0;
+        padding: 0;
+    }
+    .search-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin:10px;
+    }
+    .search-container input[type=text] {
+        width: 100vw;
+        margin:5px;
+    }
+    .search-container button {
+        width: 100vw;
+        clip-path:none;  
+        margin:5px;
     }
     .container-heading {
         font-size: 32px;
@@ -180,4 +196,3 @@ section {
         max-height: 260px;
     }
  }
-
