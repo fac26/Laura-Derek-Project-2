@@ -104,7 +104,7 @@ section {
     padding-top:30px;
     position: relative;
 }
-.container {
+.container, .search-results-container {
     max-width: 850px;
     display: flex;
     flex-direction: row;
@@ -119,18 +119,18 @@ section {
     box-shadow: inset 0 0 0.75em 0 var(--fg-colour-two), 0 0 1.15em 0 var(--fg-colour-two);
     border-radius: 10px;
 }
-.container-heading {
+.container-heading, .search-results-heading {
     font-size: 40px;
     margin-bottom: 20px;
     color: var(--fg-colour-three);
     text-shadow: 0 0 0.3em currentColor;
  }
- .container-description {
+ .container-description, .search-results-description {
     font-size: 18px;
     text-align: justify;
     text-justify: inter-word;  
  }
- .container-gif {
+ .container-gif, .search-results-gif {
     max-width: 400px;
     max-height: 400px;
  }
