@@ -40,15 +40,25 @@ function getGif(word){
         })
         .then(gifSearchResults => {
             if (gifSearchResults.data.length === 0){
-                throw new Error("There are no related gifs"); // deal with the problem of no related gifs in the catch block
-            }
+                fetch(`https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&limit=1&rating=g`)
+                    .then(response => response.json())
+                    .then(randomGif => {
+                        const randomGifURL = randomGif.data.images.downsized.url;
+                        const randomGifAltText = randomGif.data.title;
+                        gif.src = randomGifURL;
+                        gif.alt = randomGifAltText;
+                    })            
+            } else {
             const gifURL = gifSearchResults.data[0].images.downsized.url;
             const gifAltText = gifSearchResults.data[0].title;
             gif.src = gifURL;
             gif.alt = gifAltText;
-
+            }
         })
         .catch(error => {
-            // code to deal with error goes here
+            if (error.message === "There are no related gifs"){
+                console.log(error);
+
+            }
         })
 }
