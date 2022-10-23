@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
     e.preventDefault(); // stop the form's default behaviour of submitting
@@ -22,12 +20,7 @@ function createOutput(){
     <output class="search-results-container">
         <div class="search-results-info">
             <h2 class="search-results-heading"></h2>
-<<<<<<< Updated upstream
-            <p class="search-results-part-of-speech"></p>
-            <p class="search-results-description"></p>
-=======
             <div class="search-results-description"></div>
->>>>>>> Stashed changes
         </div>
     <img class="search-results-gif" src="" alt="">
     </output>
@@ -79,103 +72,50 @@ function getGif(word){
 
 function getDefinition(word){
     const headingOutput = document.querySelector(".search-results-heading");
-<<<<<<< Updated upstream
-    const definitionOutput = document.querySelector(".search-results-description");
-    const partOfSpeechOutput = document.querySelector(".search-results-part-of-speech");
-    let count = 0;
-    
-=======
+    // request that word from dictionary API
+    fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+      .then((response) => {
+          if (!response.ok) throw new Error(response.status);
+          return response.json();
+      })
+      .then((data_arr) => {
+          data_arr.forEach ( data => {
+              headingOutput.textContent = data.word;
+              data.meanings.forEach ( meaning => {
+                  let subHeading = "";
+                  subHeading = document.createElement("p");
+                  const wordType = document.createTextNode(`${meaning.partOfSpeech}`);
+                  subHeading.appendChild(wordType);
+                  subHeading.classList.add("search-results-part-of-speech");
+                  const list = document.querySelector(".search-results-description");
+                  list.appendChild(subHeading);
 
->>>>>>> Stashed changes
-     // request that word from dictionary API
-     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
-        .then((response) => {
-            if (!response.ok) throw new Error(response.status);
-            return response.json();
-        })
-        .then((data_arr) => {
-<<<<<<< Updated upstream
-            data_arr.forEach ( data => {
-                console.log(data_arr)
-                headingOutput.textContent = data.word;
-                data.meanings.forEach ( meaning => {
-                    console.log(meaning.partOfSpeech)
-                    partOfSpeechOutput.textContent = meaning.partOfSpeech;
-                    meaning.definitions.forEach ( item => {
-                        let para = "";
-                        let str = "";
-                        count += 1;
-                        if (count < 4) {
-                            para = document.createElement("p");
-                            str += `${count}) ${item.definition}`;
-                            const definition = document.createTextNode(str);
-                            para.appendChild(definition);
-                            const list = document.querySelector(".search-results-description");
-                            list.appendChild(para);
-                        }
-                        });
-                    });
-                });
-        })
-        .catch(error => {
-            console.log(error);
-            headingOutput.textContent = word;
-            definitionOutput.textContent = "Sorry, we couldn't find this word in the dictionary.";
-        })
-}
-
-
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
-            // console.log(data_arr)
-
-            data_arr.forEach ( data => {
-                // console.log(data);
-                headingOutput.textContent = data.word;
-                data.meanings.forEach ( meaning => {
-
-                    let subHeading = "";
-                    subHeading = document.createElement("p");
-                    const wordType = document.createTextNode(`${meaning.partOfSpeech}`);
-                    console.log("word type", wordType);
-                    console.log(subHeading);
-                    subHeading.appendChild(wordType);
-                    subHeading.classList.add("search-results-part-of-speech");
-                    const list = document.querySelector(".search-results-description");
-                    list.appendChild(subHeading);
-
-                    let index =0;
-                    meaning.definitions.every(item => {
-                        let para = "";
-                        let str = "";
-                        para = document.createElement("p");
-                        str += `${[index +1]}) ${item.definition}`;
-                        const definition = document.createTextNode(str);
-                        para.appendChild(definition);
-                        para.classList.add("search-results-definition");
-                        const list = document.querySelector(".search-results-description");
-                        list.appendChild(para);
-                        index +=1;
-                        return !(index === 3)
-                    })
-                })    
-
-
-            });
-        })
-        .catch(error => {
-            console.log(error);
-            let para = "";
-            let str = "";
-            para = document.createElement("p");
-            str += "Sorry, we couldn't find this word in the dictionary.";
-            const definition = document.createTextNode(str);
-            para.appendChild(definition);
-            const list = document.querySelector(".search-results-description");
-            list.appendChild(para);
-        }) 
+                  let index = 0;
+                  meaning.definitions.every(item => {
+                      let para = "";
+                      let str = "";
+                      para = document.createElement("p");
+                      str += `${[index +1]}) ${item.definition}`;
+                      const definition = document.createTextNode(str);
+                      para.appendChild(definition);
+                      para.classList.add("search-results-definition");
+                      const list = document.querySelector(".search-results-description");
+                      list.appendChild(para);
+                      index +=1;
+                      return !(index === 3)
+                  })
+              })    
+          });
+      })
+      .catch(error => {
+          console.log(error);
+          let para = "";
+          let str = "";
+          para = document.createElement("p");
+          str += "Sorry, we couldn't find this word in the dictionary.";
+          const definition = document.createTextNode(str);
+          para.appendChild(definition);
+          const list = document.querySelector(".search-results-description");
+          list.appendChild(para);
+      }) 
     }
->>>>>>> Stashed changes
