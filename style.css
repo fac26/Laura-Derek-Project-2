@@ -130,9 +130,22 @@ section {
     text-align: justify;
     text-justify: inter-word;  
  }
+<<<<<<< Updated upstream
  .container-gif {
     max-width: 400px;
     max-height: 400px;
+=======
+ .search-results-part-of-speech {
+    font-size: 18px;
+    text-align: left;
+    text-justify: inter-word;  
+    font-style: italic;
+ }
+ .container-gif, .search-results-gif {
+    width: 400px;
+    height: auto;
+    align-self: center;
+>>>>>>> Stashed changes
  }
  @media all and (max-width: 850px) {
     header{
