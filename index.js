@@ -53,9 +53,9 @@ function getGif(word){
                         gif.src = randomGifURL;
                         gif.alt = randomGifAltText;
                     })            
-            } else { // If there is a related gif, use the first related gif that comes up 
+            } else { // If there is a related gif, use a random related gif out of the search results 
             const NoOfResults = gifSearchResults.data.length;
-            const randomIndex = Math.floor(Math.random() * NoOfResults); // use this index to get a random related gif
+            const randomIndex = Math.floor(Math.random() * NoOfResults);
             const gifURL = gifSearchResults.data[randomIndex].images.downsized.url;
             const gifAltText = gifSearchResults.data[randomIndex].title;
             gif.src = gifURL;
