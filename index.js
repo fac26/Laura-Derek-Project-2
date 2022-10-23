@@ -116,4 +116,7 @@ function getDefinition(word){
 }
 
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
