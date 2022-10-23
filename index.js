@@ -31,7 +31,7 @@ function createOutput(){
 function getGif(word){
     const apiKey = "Uw5sF7tekQMGdK5DhL2yGg9JPCutP6SU";
     const gif = document.querySelector(".search-results-gif");
-    fetch(`https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${word}&limit=1&offset=0&rating=g&lang=en`)
+    fetch(`https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${word}&limit=50&offset=0&rating=g&lang=en`)
         .then(response => {
             if (!response.ok){
                 throw new Error(response.status); // throw error if GIPHY doesn't respond
@@ -54,8 +54,10 @@ function getGif(word){
                         gif.alt = randomGifAltText;
                     })            
             } else { // If there is a related gif, use the first related gif that comes up 
-            const gifURL = gifSearchResults.data[0].images.downsized.url;
-            const gifAltText = gifSearchResults.data[0].title;
+            const NoOfResults = gifSearchResults.data.length;
+            const randomIndex = Math.floor(Math.random() * NoOfResults); // use this index to get a random related gif
+            const gifURL = gifSearchResults.data[randomIndex].images.downsized.url;
+            const gifAltText = gifSearchResults.data[randomIndex].title;
             gif.src = gifURL;
             gif.alt = gifAltText;
             }
