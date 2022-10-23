@@ -132,6 +132,7 @@ section {
  }
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
  .container-gif {
     max-width: 400px;
     max-height: 400px;
@@ -144,6 +145,16 @@ section {
     text-justify: inter-word;  
     font-style: italic;
  }
+=======
+ .search-results-part-of-speech {
+    color: var(--fg-colour-two);
+    text-align: left;
+    font-style: italic;
+ }
+.search-results-definition {
+    text-align: justify;
+ }
+>>>>>>> Stashed changes
  .container-gif, .search-results-gif {
     width: 400px;
     height: auto;
