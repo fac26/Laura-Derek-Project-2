@@ -119,7 +119,7 @@ section {
     box-shadow: inset 0 0 0.75em 0 var(--fg-colour-two), 0 0 1.15em 0 var(--fg-colour-two);
     border-radius: 10px;
 }
-.container-info {
+.container-info, .search-results-info {
     max-width: 400px;
 }
 .container-heading, .search-results-heading {
