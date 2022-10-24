@@ -4,6 +4,7 @@ form.addEventListener("submit", (e) => {
     const input = document.querySelector("input");
     const searchTerm = input.value.toLowerCase().trim(); // save the word to a variable
     input.value = ""; // clear the search bar
+    removeBox();
     createOutput();
     getGif(searchTerm);
     getDefinition(searchTerm);
@@ -27,6 +28,11 @@ function createOutput(){
     `;
     outputSection.innerHTML = outputSectionHTML; 
     document.body.appendChild(outputSection); // add new section to DOM for displaying search results
+}
+function removeBox(){
+    if (document.body.contains(document.querySelector(".hero"))){
+        document.querySelector(".hero").remove();
+    }
 }
 
 function getGif(word){
