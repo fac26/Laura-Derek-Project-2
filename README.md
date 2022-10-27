@@ -15,7 +15,7 @@ Try the app out [here](https://fac26.github.io/gif-tionary/). To get started, ju
 
 To clone this repo to your local computer, copy and paste the following into your terminal:
 
-```git clone git@github.com:fac26/Laura-Derek-Project-2.git```
+```git clone git@github.com:fac26/gif-tionary.git```
 
 ## Team members
 This project was made by [LauraK0](https://github.com/LauraK0) and [LL835](https://github.com/LL835).
