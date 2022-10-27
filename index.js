@@ -106,7 +106,7 @@ function getDefinition(word){
                       const list = document.querySelector(".search-results-description");
                       list.appendChild(para);
                       index +=1; //adding one to the count each time it loops
-                      return !(index === 3) //once count = 3, code exits out of loop so that a reasonable amount of definitions are displayed
+                      return !(index === 3) //return false when second index = 3, so that .every stops calling the callback
                   })
               })    
           });
