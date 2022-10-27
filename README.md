@@ -11,7 +11,7 @@ Gif-tionary is an app that lets a user search for a word and get the definition 
 It was built with the [Free Dictionary API](https://dictionaryapi.dev/) and [Giphy API](https://developers.giphy.com/).
 
 ## How to use
-Try the app out [here](https://fac26.github.io/Laura-Derek-Project-2/). To get started, just type a word into the search bar and hit "Go".
+Try the app out [here](https://fac26.github.io/gif-tionary/). To get started, just type a word into the search bar and hit "Go".
 
 To clone this repo to your local computer, copy and paste the following into your terminal:
 
